@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+If name == “__main__”:
 def add(a, b):
     """My addition function
 

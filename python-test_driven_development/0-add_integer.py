@@ -1,40 +1,36 @@
 #!/usr/bin/python3
 """
-    Function adds two integers.
+add_integer(a, b=98)
 
-    Example:
-       a = 5
-       b = 10
+Adds two numbers and returns the result.
 
-       add_integer(a, b)
-
-       15
+Example
+-------
+>>> add_integer(5, 10)
+15
 """
 
 
 def add_integer(a, b=98):
     """
-        Args:
-            a: first integer
-            b: second integer
+    Add two integers or floats.
 
-        Returns:
-            Sum of the two integers
+    Args:
+        a: first number (int or float)
+        b: second number (int or float), defaults to 98
+
+    Returns:
+        int: the sum of a and b, after converting floats to ints
+
+    Raises:
+        TypeError: if a or b is not an int or float
     """
-    if not isinstance(a, (float, int)):
-        if a is not None:
-            raise TypeError("a must be an integer")
-        raise ValueError("a must be an integer")
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
 
-    if not isinstance(b, (float, int)):
-        if b is not None:
-            raise TypeError("b must be an integer")
-        raise ValueError("b must be an integer")
-
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
-
+    # Convert floats to ints before addition, as requested
+    a = int(a) if isinstance(a, float) else a
+    b = int(b) if isinstance(b, float) else b
     return a + b
-  

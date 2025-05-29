@@ -23,14 +23,22 @@ def add_integer(a, b=98):
         int: the sum of a and b, after converting floats to ints
 
     Raises:
-        TypeError: if a or b is not an int or float
+        TypeError: if a or b is not an int/float (and not None)
+        ValueError: if a or b is None
     """
+    # ---- check `a`
+    if a is None:
+        raise ValueError("a must be an integer")
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
+
+    # ---- check `b`
+    if b is None:
+        raise ValueError("b must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    # Convert floats to ints before addition, as requested
+    # convert floats to ints before addition
     a = int(a) if isinstance(a, float) else a
     b = int(b) if isinstance(b, float) else b
     return a + b

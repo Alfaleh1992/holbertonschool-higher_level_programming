@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
 """
-    Function divides all elements of a matrix
+    Function adds two integers.
 
     Example:
        a = 5
@@ -22,7 +21,6 @@ def add_integer(a, b=98):
         Returns:
             Sum of the two integers
     """
-
     if not isinstance(a, (float, int)):
         if a is not None:
             raise TypeError("a must be an integer")
@@ -33,14 +31,10 @@ def add_integer(a, b=98):
             raise TypeError("b must be an integer")
         raise ValueError("b must be an integer")
 
-    if type(a) is float and type(b) is float:
-        return int(a) + int(b)
-
-    elif type(a) is not float and type(b) is float:
-        return a + int(b)
-
-    elif type(a) is float and type(b) is not float:
-        return int(a) + b
+    if isinstance(a, float):
+        a = int(a)
+    if isinstance(b, float):
+        b = int(b)
 
     return a + b
-    
+  

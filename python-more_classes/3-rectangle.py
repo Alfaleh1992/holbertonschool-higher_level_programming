@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a class Rectangle with printable and reproducible representations."""
+"""Defines a class Rectangle with string and repr representations."""
 
 
 class Rectangle:
@@ -17,7 +17,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get the width of the rectangle."""
+        """Retrieve the width of the rectangle."""
         return self.__width
 
     @width.setter
@@ -31,7 +31,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height of the rectangle."""
+        """Retrieve the height of the rectangle."""
         return self.__height
 
     @height.setter
@@ -54,10 +54,13 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return a string of the rectangle using '#' characters."""
+        """Return the rectangle as a string of '#' characters."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join("#" * self.__width for _ in range(self.__height))
+        result = ""
+        for _ in range(self.__height):
+            result += "#" * self.__width + "\n"
+        return result[:-1]
 
     def __repr__(self):
         """Return a string that can recreate the rectangle."""

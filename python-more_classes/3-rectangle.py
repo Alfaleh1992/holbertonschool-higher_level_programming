@@ -56,6 +56,4 @@ class Rectangle:
             return ""
         return "\n".join(["#" * self.__width for _ in range(self.__height)])
 
-    def __repr__(self):
-        """Return a string to recreate this rectangle."""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+    # REMOVE __repr__ completely

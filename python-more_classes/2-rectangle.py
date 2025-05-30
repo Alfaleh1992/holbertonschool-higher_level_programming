@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""2-rectangle.py: Defines a class Rectangle with area and perimeter."""
+"""Defines a class Rectangle that models width, height, area, and perimeter."""
 
 
 class Rectangle:
-    """Represents a rectangle with width and height."""
+    """Represents a rectangle with validated dimensions."""
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
 
         Args:
-            width (int): Rectangle width (default 0).
-            height (int): Rectangle height (default 0).
+            width (int): Rectangle width.
+            height (int): Rectangle height.
         """
         self.width = width
         self.height = height
@@ -22,15 +22,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Set the width with validation.
-
-        Args:
-            value (int): New width.
-
-        Raises:
-            TypeError: If not int.
-            ValueError: If negative.
-        """
+        """Set the width of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -44,27 +36,8 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Set the height with validation.
-
-        Args:
-            value (int): New height.
-
-        Raises:
-            TypeError: If not int.
-            ValueError: If negative.
-        """
+        """Set the height of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value
-
-    def area(self):
-        """Return the area of the rectangle."""
-        return self.__width * self.__height
-
-    def perimeter(self):
-        """Return the perimeter of the rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        return 2 * (self.__width + self.*
+            raise ValueError("height mus

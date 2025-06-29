@@ -1,0 +1,1 @@
+This project covers the basics of SQL, including data querying and simple database manipulation using `SELECT`, `WHERE`, and `JOIN` statements.
